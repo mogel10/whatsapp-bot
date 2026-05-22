@@ -18,7 +18,7 @@ app.post('/bot', (req, res) => {
   let respuesta = '';
 
   if (estado.paso === 'inicio') {
-    respuesta = '¡Hola! 👋 Soy el bot de prueba. ¿Cómo te llamás?';
+    respuesta = '¡Hola! 👋 Soy el bot de prueba para RDL Servicios financieros. ¿Cómo te llamás?';
     estado.paso = 'esperando_nombre';
 
   } else if (estado.paso === 'esperando_nombre') {
