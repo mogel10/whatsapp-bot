@@ -9,11 +9,15 @@ app.post('/bot', (req, res) => {
   const numero = req.body.From;
   const mensaje = req.body.Body.trim().toLowerCase();
 
+  // Resetear con "reset" o "hola"
+  if (mensaje === 'reset' || mensaje === 'hola') {
+    delete conversaciones[numero];
+  }
+
   // Si es la primera vez que escribe, arrancamos
   if (!conversaciones[numero]) {
     conversaciones[numero] = { paso: 'inicio' };
   }
-
   const estado = conversaciones[numero];
   let respuesta = '';
 
